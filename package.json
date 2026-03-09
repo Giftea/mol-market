@@ -5,6 +5,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsc",
+    "backend": "ts-node backend/src/server.ts",
     "translation-bot": "ts-node agents/translation-bot.ts",
     "content-bot": "ts-node agents/content-bot.ts",
     "demo": "concurrently --names 'TRANSLATION,CONTENT' --prefix-colors 'blue,green' 'npm run translation-bot' 'sleep 4 && npm run content-bot'",
@@ -12,6 +13,9 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
+    "@hirosystems/clarinet-sdk": "^3.8.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
     "@types/node": "^20.0.0",
     "concurrently": "^8.2.0",
     "ts-node": "^10.9.0",
@@ -19,6 +23,9 @@
     "vitest": "^4.0.18"
   },
   "dependencies": {
-    "axios": "^1.6.0"
+    "axios": "^1.6.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3"
   }
 }
