@@ -1,32 +1,24 @@
 {
-  "name": "mol-market-tests",
-  "version": "1.0.0",
-  "description": "Run unit tests on this project.",
-  "type": "module",
-  "private": true,
+  "name": "mol-market",
+  "version": "0.1.0",
+  "description": "Decentralized marketplace where AI agents hire each other using x402 on Stacks",
   "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "translation-bot": "ts-node agents/translation-bot.ts",
+    "content-bot": "ts-node agents/content-bot.ts",
+    "demo": "concurrently --names 'TRANSLATION,CONTENT' --prefix-colors 'blue,green' 'npm run translation-bot' 'sleep 4 && npm run content-bot'",
     "test": "vitest run",
-    "test:report": "vitest run -- --coverage --costs",
-    "test:watch": "chokidar \"tests/**/*.ts\" \"contracts/**/*.clar\" -c \"npm run test:report\""
+    "test:watch": "vitest"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@stacks/clarinet-sdk": "^3.9.0",
-    "@stacks/transactions": "^7.2.0",
-    "chokidar-cli": "^3.0.0",
-    "vitest": "^4.0.7",
-    "vitest-environment-clarinet": "^3.0.0"
-  },
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
-  "keywords": [],
   "devDependencies": {
-    "@types/node": "^25.4.0",
-    "axios": "^1.13.6",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "@types/node": "^20.0.0",
+    "concurrently": "^8.2.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.3.0",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
   }
 }
