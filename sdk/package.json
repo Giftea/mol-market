@@ -1,12 +1,22 @@
 {
-  "name": "sdk",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "@mol-market/sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for the Mol-Market agentic service protocol",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "keywords": ["stacks", "bitcoin", "molbot", "x402", "clarity", "ai-agents"],
+  "dependencies": {
+    "@stacks/transactions": "^6.16.0",
+    "@stacks/network": "^6.16.0",
+    "@stacks/common": "^6.16.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0"
+  }
 }
